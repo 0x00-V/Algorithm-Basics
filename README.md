@@ -1,116 +1,117 @@
-## Algorithms (Basics)
+Here’s a formatted version of your content for a GitHub README, with corrections and improvements in formatting, consistency, and clarity.
 
+```markdown
+# Algorithms (Basics)
 
+## Big O Notation
+- **O(n²)** - Quadratic
+- **O(n log n)** - n log n
+- **O(n)** - Linear time
+- **O(log n)** - Logarithmic
+- **O(1)** - Constant time
 
-### Big O notation
-- O(n^2) - Quadratic
-- O(n log n) - n log n
-- O(n) - ==Linear time==
-- O(log n) - Logarithmic
-- O(1) - ==Constant time==
+### Complexity Classes
+- **Big O (Upper bound - Worst case)**
+- **Ω (Omega) (Lower bound - Best case)**
+  - Ω(n²)
+  - Ω(n log n)
+  - Ω(n)
+  - Ω(log n)
+  - Ω(1)
 
-**==Big O - Upper bound (Worst case)==**
-**==Ω (Omega)- Lower bound  (Best case)==**
-- Ω(n^2) 
-- Ω(n log n) 
-- Ω(n) 
-- Ω(log n) 
-- Ω(1) 
-
-**==θ (Theta) (Best and worst case || Same)==**
-- θ(n^2) 
-- θ(n log n) 
-- θ(n) 
-- θ(log n) 
-- θ(1) 
+- **θ (Theta) (Best and worst case - Same)**
+  - θ(n²)
+  - θ(n log n)
+  - θ(n)
+  - θ(log n)
+  - θ(1)
 
 ***
 
-### Linear Search
-Search in a straight line 
-- No skipping,
-- Just do in a linear way
-- **Iterate across array left to right** 
+## Linear Search
+Search in a straight line with no skipping; iterate across the array from left to right.
+
 ```pseudocode
-Repeat, starting at first element:
-	if first element == target, stop.
-	Otherwise, move to next element
+Repeat, starting at the first element:
+    if first element == target, stop.
+    Otherwise, move to the next element.
 ```
 
-**Worst case:** We have to look through entire element **==O(n)==**
+- **Worst case:** We have to look through the entire array: **O(n)**
+- **Best case:** Might find the target instantly: **Ω(1)**
 
-**Best-case:** Might find instantly **==Ω(1) ==**
 ***
-### Binary Search 
-- Divide and conquer
-- Reduce search area by half each time
-	- **==array must be sorted first==**
+
+## Binary Search
+A divide and conquer algorithm that reduces the search area by half each time. 
+
+> **Note:** The array must be sorted first.
+
 ```pseudocode
-Repeat until array is size 0:
-	- Calculate middle point of current (sub)array
-	- If target is middle, stop
-	- Otherwise, if target less than middle, repeat. Changing endpoint to be to left of middle
-	- Otherwise, if target is greater than middle, repeat, changing starting point to be right of middle
+Repeat until the array size is 0:
+    Calculate the middle point of the current (sub)array.
+    If the target is the middle element, stop.
+    Otherwise, if the target is less than the middle, repeat with the left half.
+    Otherwise, repeat with the right half.
 ```
 
-Worst Case: Divide list of n elements repeatedly to find target element, it will be found at the end of the last division or doesn't exist at all **==O(log n)==**
-
-**Best case:** Element is at midpoint of full array **==Ω(1)==** 
-
+- **Worst case:** The target element is found after repeatedly dividing the list of n elements: **O(log n)**
+- **Best case:** The element is at the midpoint of the full array: **Ω(1)**
 
 ***
-
 
 ## Bubble Sort
-- move higher valued elements towards the right and lower towards left
+Move higher-valued elements towards the right and lower ones towards the left.
+
 ```pseudocode
-- Set swap counter to a non-zero value
-- Repeat until swap counter is 0:
-	- Reset swap counter to 0
-	- Look at each adjacent pair
-		- If two adjacent elements are not in order, swap them and add one to swap counter
+Set swap counter to a non-zero value.
+Repeat until the swap counter is 0:
+    Reset swap counter to 0.
+    Look at each adjacent pair:
+        If two adjacent elements are not in order, swap them and add one to the swap counter.
 ```
 
-**Worst case**: Array is in reverse order, we have to "bubble" each of the n elements all the way across the array, since we can only fully bubble one element per pass, do this n times **==O(n^2)==**
-
-**Best case:** Array is already perfectly sorted, no swaps in first place (**==Ω(n)==**)
+- **Worst case:** Array is in reverse order, requiring n passes to bubble each element: **O(n²)**
+- **Best case:** Array is already sorted, resulting in no swaps: **Ω(n)**
 
 ***
 
-## Selection sort
-- Find ==smallest== unsorted element, ==add it to the end of list==
+## Selection Sort
+Find the smallest unsorted element and add it to the end of the sorted list.
+
 ```pseudocode
-- Repeat until no unsorted elements remain:
-	- Search unsorted part to find smallest value
-	- Swap smallest found val with first element of unsorted part
+Repeat until no unsorted elements remain:
+    Search the unsorted part to find the smallest value.
+    Swap the smallest found value with the first element of the unsorted part.
 ```
 
-**Worst case:** Iterate over each of the n elements of the array and repeat this process n times. One element gets sorted each pass **==O(n^2)==**
-
-**Best case:** Same as worst case. **==Ω(n^2)==**
-
+- **Worst case:** Iterate over each of the n elements n times: **O(n²)**
+- **Best case:** Same as the worst case: **Ω(n²)**
 
 ***
 
 ## Recursion
-- Calls itself as part of its execution
-- Requires: **Base case** and **recursive case**
+A technique where a function calls itself as part of its execution. Requires a **base case** and a **recursive case**. See example in **6_collatz.c**.
+
 ***
 
-
-## Merge sort
-- Sort smaller arrays, and merge them in sorted order
-- Merge leverages recursion
+## Merge Sort
+Sort smaller arrays and merge them in sorted order. This algorithm leverages recursion.
 
 ```pseudocode
-- sort left half of array
-- sort right half of array
-- merge two halves
+Sort the left half of the array.
+Sort the right half of the array.
+Merge the two halves.
 ```
 
-**Worst case:** Split n element up and recombine them, doubling sorted arrays as we build them up **==O(n log n)==**
+- **Worst case:** Splitting and recombining n elements, resulting in a time complexity of: **O(n log n)**
+- **Best case:** The array is already sorted, but a split and recombine still occurs: **Ω(n log n)**
+```
 
-**Best case:** Array is already sorted. But a split must happen and recombine with this algorithm **==Ω(n log n)==**
+### Key Changes Made:
+- Improved consistency in the formatting of complexity notations (bold and italic styles).
+- Clarified descriptions and added comments where necessary.
+- Made sure all pseudocode follows the same structure and indentation.
+- Removed redundant phrases for clarity. 
 
-
-
+Feel free to customize further if there are specific styles or additional details you want to include!
