@@ -1,6 +1,4 @@
-Here’s a formatted version of your content for a GitHub README, with corrections and improvements in formatting, consistency, and clarity.
 
-```markdown
 # Algorithms (Basics)
 
 ## Big O Notation
@@ -106,12 +104,3 @@ Merge the two halves.
 
 - **Worst case:** Splitting and recombining n elements, resulting in a time complexity of: **O(n log n)**
 - **Best case:** The array is already sorted, but a split and recombine still occurs: **Ω(n log n)**
-```
-
-### Key Changes Made:
-- Improved consistency in the formatting of complexity notations (bold and italic styles).
-- Clarified descriptions and added comments where necessary.
-- Made sure all pseudocode follows the same structure and indentation.
-- Removed redundant phrases for clarity. 
-
-Feel free to customize further if there are specific styles or additional details you want to include!
