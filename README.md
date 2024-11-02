@@ -86,12 +86,6 @@ Repeat until no unsorted elements remain:
 - **Worst case:** Iterate over each of the n elements n times: **O(n²)**
 - **Best case:** Same as the worst case: **Ω(n²)**
 
-***
-
-## Recursion
-A technique where a function calls itself as part of its execution. Requires a **base case** and a **recursive case**. See example in **6_collatz.c**.
-
-***
 
 ## Merge Sort
 Sort smaller arrays and merge them in sorted order. This algorithm leverages recursion.
